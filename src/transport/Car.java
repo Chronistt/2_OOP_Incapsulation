@@ -1,12 +1,8 @@
 package transport;
 
-public class Car {
-    final String brand;
-    final String model;
+public class Car extends Transport {
+
     double engineVolume;
-    String color;
-    final String productionCountry;
-    final int productionYear;
     String transmission;
     final String bodyType;
     int registerNumber;
@@ -15,13 +11,9 @@ public class Car {
         String printTyreType;
 
 
-    public Car(String brand, String model, double engineVolume, String color, String productionCountry, int productionYear, String transmission, String bodyType, int registerNumber, int seats, boolean tyreType) {
-        this.brand = brand;
-        this.model = model;
+    public Car(String brand, String model, double engineVolume, String color, String productionCountry, int productionYear, int maxSpeed, String transmission, String bodyType, int registerNumber, int seats, boolean tyreType) {
+       super(brand, model, color, productionCountry, productionYear, maxSpeed);
         this.engineVolume = engineVolume;
-        this.color = color;
-        this.productionCountry = productionCountry;
-        this.productionYear = productionYear;
         this.transmission = transmission;
         this.bodyType = bodyType;
         this.registerNumber = registerNumber;
@@ -29,9 +21,9 @@ public class Car {
         this.tyreType = tyreType;
     }
 
-    public String getBrand() {
-        return brand;
-    }
+    //public String getBrand() {
+      //  return brand;
+    //}
 
     public String getModel() {
         return model;
@@ -74,15 +66,16 @@ public class Car {
     }
 
     public void setEngineVolume(double engineVolume) {
+        if (engineVolume == null) {
+            this.engineVolume = 1.5;
+        } else
         this.engineVolume = engineVolume;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public void setTransmission(String transmission) {
-        this.transmission = transmission;
+        public void setTransmission(String transmission) {
+        if (transmission==null||transmission.isEmpty()) {
+            this.transmission = "Manual";
+        } else this.transmission = transmission;
     }
 
     public void setRegisterNumber(int registerNumber) {
@@ -117,7 +110,7 @@ public class Car {
     }
     @Override
     public String toString() {
-        return  brand+" "+ model+" "+ engineVolume+ " "+color + " "+productionCountry + " "+ productionYear+" "+
+        return  brand+" "+ model+" "+ engineVolume+ " "+color + " "+productionCountry + " "+ productionYear+" "+maxSpeed+" km/h "+
          transmission + " "+ bodyType +" "+ registerNumber+ " "+seats + " "+ printTyreType(this.tyreType);
     }
 
