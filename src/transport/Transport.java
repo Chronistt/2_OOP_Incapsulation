@@ -1,21 +1,19 @@
 package transport;
 
-public class Transport {
+public abstract class Transport <T extends Driver> {
     final String brand;
     final String model;
-    String color;
-    final String productionCountry;
-    final int productionYear;
-    int maxSpeed;
+    final double engineVolume;
 
-    public Transport(String brand, String model, String color, String productionCountry, int productionYear, int maxSpeed) {
+    private T driver;
+
+    public Transport(String brand, String model, double engineVolume, Driver driver) {
         this.brand = brand;
         this.model = model;
-        this.color = color;
-        this.productionCountry = productionCountry;
-        this.productionYear = productionYear;
-        this.maxSpeed = maxSpeed;
+        this.engineVolume = engineVolume;
+        this.driver = (T) driver;
     }
+
 
     public String getBrand() {
         return brand;
@@ -25,34 +23,18 @@ public class Transport {
         return model;
     }
 
-    public String getColor() {
-        return color;
+    public double getEngineVolume() {
+        return engineVolume;
+    }
+    public void startMove() {
+        System.out.println("поехали");
+    }
+    public void stopMove(){
+        System.out.println("приехали");
     }
 
-    public String getProductionCountry() {
-        return productionCountry;
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setColor(String color) {
-        if (color==null||color.isEmpty()) {
-            this.color = "без цвета"
-        } else
-            this.color = color;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        if (maxSpeed==null||maxSpeed<=0) {
-            this.maxSpeed = 10;
-            } else
-        this.maxSpeed = maxSpeed;
+    public T getDriver() {
+        return driver;
     }
 }
 
