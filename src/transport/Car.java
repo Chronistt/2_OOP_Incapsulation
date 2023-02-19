@@ -1,15 +1,24 @@
 package transport;
 
 public class Car extends Transport <DriverB> implements Competing {
-
-    public Car(String brand, String model, double engineVolume, DriverB driver) {
+BodyType bodyType;
+    public Car(String brand, String model, double engineVolume, DriverB driver, BodyType bodyType) {
         super(brand, model, engineVolume, driver);
+        this.bodyType=bodyType;
     }
 
+    @Override
+    public Type getType() {
+        return Type.CAR;
+    }
+    @Override
+    public void printType() {
+        Type e = getType();
+        }
 
     @Override
     public String toString() {
-        return  brand+" "+ model+" "+ engineVolume;
+        return  brand+" "+ model+" "+ engineVolume +" "+ bodyType;
     }
 
     @Override
