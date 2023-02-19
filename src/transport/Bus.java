@@ -55,8 +55,8 @@ BusCapacity busCapacity;
     /*@Override
     public void passCheck() {
         System.out.println("Автобусы не проходят диагностику");
-    }*/
-
+    }
+*/
     @Override
     public void maxSpeed() {
 

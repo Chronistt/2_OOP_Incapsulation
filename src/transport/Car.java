@@ -14,7 +14,8 @@ BodyType bodyType;
     @Override
     public void printType() {
         Type e = getType();
-        }
+        System.out.println(e);
+    }
 
     @Override
     public String toString() {
