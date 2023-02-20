@@ -27,9 +27,8 @@ public class Main {
         System.out.println(truckMaz);
 
         car5.printType();
-
         busLiaz.passCheck();
-
+        car2.passCheck();
 
 
 

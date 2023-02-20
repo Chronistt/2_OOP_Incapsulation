@@ -40,8 +40,8 @@ BodyType bodyType;
     }
 
     @Override
-    boolean passCheck() throws TransportTypeException {
-        return false;
+    public String passCheck() throws TransportTypeException {
+        return "Completed";
     }
 }
 

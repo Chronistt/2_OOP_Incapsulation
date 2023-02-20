@@ -54,7 +54,7 @@ public class Truck extends Transport <DriverC> implements Competing{
 
     }
     @Override
-    boolean passCheck() throws TransportTypeException {
-        return false;
+    public String passCheck() throws TransportTypeException {
+        return "Completed";
     }
-}
+    }
