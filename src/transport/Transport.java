@@ -36,5 +36,9 @@ public abstract class Transport <T extends Driver> {
     public T getDriver() {
         return driver;
     }
+
+  public abstract Type getType ();
+    public abstract void printType();
+    //public abstract passCheck();
 }
 
