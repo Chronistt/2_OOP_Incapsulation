@@ -38,5 +38,10 @@ BodyType bodyType;
         System.out.println("Car's max speed");
 
     }
+
+    @Override
+    boolean passCheck() throws TransportTypeException {
+        return false;
+    }
 }
 

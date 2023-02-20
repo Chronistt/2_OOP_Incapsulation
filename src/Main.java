@@ -28,6 +28,8 @@ public class Main {
 
         car5.printType();
 
+        busLiaz.passCheck();
+
 
 
 
