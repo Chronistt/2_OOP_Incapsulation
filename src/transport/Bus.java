@@ -53,8 +53,8 @@ BusCapacity busCapacity;
         }
 
     @Override
-    public String passCheck() throws TransportTypeException {
-        throw new TransportTypeException("Автобусы не проходят диагностику");
+    public String passCheck() {
+        throw new TransportTypeException("Это автобус. Он не проходит проверку");
     }
 
     @Override

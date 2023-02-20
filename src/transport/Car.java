@@ -41,7 +41,7 @@ BodyType bodyType;
 
     @Override
     public String passCheck() throws TransportTypeException {
-        return "Completed";
+        return "Легковушка прошла проверку";
     }
 }
 

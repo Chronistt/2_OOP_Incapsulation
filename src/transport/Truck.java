@@ -55,6 +55,6 @@ public class Truck extends Transport <DriverC> implements Competing{
     }
     @Override
     public String passCheck() throws TransportTypeException {
-        return "Completed";
+        return "Грузовик прошел проверку";
     }
     }

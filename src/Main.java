@@ -26,9 +26,15 @@ public class Main {
         Truck truckMaz = new Truck("Маз", "-4570", 12.5, new DriverC("Александр", 21, true), Truck.TruckCapacity.N3);
         System.out.println(truckMaz);
 
-        car5.printType();
-        busLiaz.passCheck();
-        car2.passCheck();
+        System.out.println(truck1.passCheck());
+
+        try {                       //проверка опасного кода
+            busLiaz.passCheck();
+
+        } catch (TransportTypeException e) { //обработка исключения
+            System.out.println(e);  }
+        System.out.println(car2.passCheck()); //проверка работоспособностикода дальше
+
 
 
 
