@@ -52,11 +52,11 @@ BusCapacity busCapacity;
             System.out.println("Bus has the best circle time");
         }
 
-    /*@Override
-    public void passCheck() {
-        System.out.println("Автобусы не проходят диагностику");
+    @Override
+    public String passCheck() {
+        throw new TransportTypeException("Это автобус. Он не проходит проверку");
     }
-*/
+
     @Override
     public void maxSpeed() {
 

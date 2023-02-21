@@ -39,6 +39,6 @@ public abstract class Transport <T extends Driver> {
 
   public abstract Type getType ();
     public abstract void printType();
-    //public abstract passCheck();
+    abstract String passCheck () throws TransportTypeException;
 }
 

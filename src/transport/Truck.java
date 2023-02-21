@@ -53,4 +53,8 @@ public class Truck extends Transport <DriverC> implements Competing{
         System.out.println("Truck's max speed");
 
     }
-}
+    @Override
+    public String passCheck() throws TransportTypeException {
+        return "Грузовик прошел проверку";
+    }
+    }
