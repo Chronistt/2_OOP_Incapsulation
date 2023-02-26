@@ -1,9 +1,11 @@
 package transport;
 
+import java.util.ArrayList;
+
 public class Truck extends Transport <DriverC> implements Competing{
     TruckCapacity truckCapacity;
-    public Truck(String brand, String model, double engineVolume, DriverC driver, TruckCapacity truckCapacity) {
-        super(brand, model, engineVolume, driver);
+    public Truck(String brand, String model, double engineVolume, DriverC driver, ArrayList<Mechanic> mechanicList, TruckCapacity truckCapacity) {
+        super(brand, model, engineVolume, driver, mechanicList);
         this.truckCapacity = truckCapacity;
     }
     public enum TruckCapacity {

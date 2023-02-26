@@ -1,9 +1,11 @@
 package transport;
 
+import java.util.ArrayList;
+
 public class Car extends Transport <DriverB> implements Competing {
 BodyType bodyType;
-    public Car(String brand, String model, double engineVolume, DriverB driver, BodyType bodyType) {
-        super(brand, model, engineVolume, driver);
+    public Car(String brand, String model, double engineVolume, DriverB driver, ArrayList <Mechanic> mechanicList, BodyType bodyType) {
+        super(brand, model, engineVolume, driver, mechanicList);
         this.bodyType=bodyType;
     }
 

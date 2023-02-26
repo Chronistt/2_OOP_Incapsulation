@@ -1,17 +1,22 @@
 package transport;
 
+import java.awt.*;
+import java.util.ArrayList;
+
 public abstract class Transport <T extends Driver> {
     final String brand;
     final String model;
     final double engineVolume;
 
     private T driver;
+    private ArrayList<Mechanic> mechanicList;
 
-    public Transport(String brand, String model, double engineVolume, Driver driver) {
+    public Transport(String brand, String model, double engineVolume, Driver driver, ArrayList<Mechanic> mechanicList) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
         this.driver = (T) driver;
+        this.mechanicList = mechanicList;
     }
 
 
@@ -37,7 +42,11 @@ public abstract class Transport <T extends Driver> {
         return driver;
     }
 
-  public abstract Type getType ();
+    public ArrayList<Mechanic> getMechanicList() {
+        return mechanicList;
+    }
+
+    public abstract Type getType ();
     public abstract void printType();
     //public abstract passCheck();
 }

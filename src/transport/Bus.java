@@ -1,10 +1,13 @@
 package transport;
 
 
+import java.awt.*;
+import java.util.ArrayList;
+
 public class Bus extends Transport <DriverD> implements Competing {
 BusCapacity busCapacity;
-    public Bus(String brand, String model, double engineVolume, DriverD driver, BusCapacity busCapacity) {
-        super(brand, model, engineVolume, driver);
+    public Bus(String brand, String model, double engineVolume, DriverD driver, ArrayList <Mechanic> mechanicList, BusCapacity busCapacity) {
+        super(brand, model, engineVolume, driver, mechanicList);
         this.busCapacity = busCapacity;
     }
     public enum BusCapacity {
@@ -27,6 +30,7 @@ BusCapacity busCapacity;
             return "Пассажировместимость от " + (minCapacity == null ? " " : String.valueOf(minCapacity)) + " до " + (maxCapacity == null ? " " : String.valueOf(maxCapacity));
         }
     }
+
     @Override
     public Type getType() {
         return Type.BUS;
