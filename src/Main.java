@@ -72,6 +72,12 @@ public class Main {
 
         serviceQeueu.printQueue();
 
+
+        Map <Transport, List <Mechanic>> carMechanics = new HashMap<>();
+        carMechanics.put(truckGazelle, truckGazelle.getMechanicList());
+        carMechanics.put(car5, car5.getMechanicList());
+        System.out.println(carMechanics);
+
     }
     public static void carInfo(Transport <?> transport) {
         System.out.println("водитель "+ transport.getDriver().getName() + " управляет автомобилем "+ transport.getBrand()+ "  и будет участвовать в заезде");
