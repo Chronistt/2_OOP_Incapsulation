@@ -1,5 +1,9 @@
 import transport.*;
 
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
 public class Main {
     public static void main(String[] args) {
         Car car5 = new Car("Hyundai", "Avanti", 1.6, new DriverB("Филипп Егорович", 12, true), BodyType.HATCHBACK );
@@ -36,11 +40,27 @@ public class Main {
         System.out.println(car2.passCheck()); //проверка работоспособностикода дальше
 
 
+        Set <Driver> driverSet = new HashSet<>(); //Создание HashSet
+        driverSet.add(truckGazelle.getDriver());
+        driverSet.add(car2.getDriver());
+        driverSet.add(busKamaz.getDriver());
+        driverSet.add(truckMaz.getDriver());
+        driverSet.add(car2.getDriver()); //дублирование водилы
+
+        Iterator <Driver> driverIterator = driverSet.iterator(); //создание итератора
+        while (driverIterator.hasNext()) {
+            System.out.println(driverIterator.next());
+        }
+        }
 
 
-    }
+
     public static void carInfo(Transport <?> transport) {
         System.out.println("водитель "+ transport.getDriver().getName() + " управляет автомобилем "+ transport.getBrand()+ "  и будет участвовать в заезде");
     }
 
- }
+
+
+
+
+}

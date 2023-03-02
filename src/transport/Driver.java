@@ -1,5 +1,9 @@
 package transport;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
 public class Driver {
     final String name;
     final int experience;
@@ -34,4 +38,18 @@ public class Driver {
         System.out.println("надо заправиться");
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }
