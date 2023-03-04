@@ -40,13 +40,16 @@ public class Driver {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return java.util.Objects.hash(getName());
     }
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+       if (this.getName() != ((Driver) obj).getName());
+
+        return false;
     }
+
 
     @Override
     public String toString() {
